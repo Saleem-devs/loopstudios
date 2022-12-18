@@ -103,6 +103,7 @@ body.overflow {
 header {
   position: relative;
   padding-bottom: 130px;
+  overflow: hidden;
 }
 header nav {
   padding: 30px;
