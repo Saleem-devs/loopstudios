@@ -1,0 +1,257 @@
+@import "config";
+@import "responsive";
+
+
+
+/*==========general========*/
+
+a{
+    color: $white;
+    text-decoration: none;
+}
+
+html {
+    font-size: 15px;
+}
+
+.container {
+    @include container;
+}
+img {
+    width: 100%;
+}
+
+body.overflow {
+    overflow: hidden;
+}
+/* Main page */
+
+// header {
+//     background: url(images/image-hero.jpg) no-repeat;
+//     background-position: center;
+//     background-size: cover;
+// }
+
+header {
+    position: relative;
+    padding-bottom: 130px;
+
+    nav {
+        padding: 30px;
+        @include flexCenter;
+
+        .pages-link a {
+            margin-right: 20px;
+            font-family: $primaryFont;
+            font-weight: 700;
+            @include transitionAll;
+            padding: 3 0 px;
+
+            &:hover {
+                border-bottom: 2px solid $white
+            }
+        }
+    }
+
+    .hero {
+        margin-top: 40px;
+        padding: 30px;
+        border: 2px solid $white;
+        width: 55%;
+
+        h1 {
+            font-size: 55px;
+            line-height: 65px;
+            font-family: $primaryFont;
+            font-weight: bold;
+            color: $white;
+        }
+    }
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu {
+    position: absolute;
+    right: -100%;
+    top: 0;
+    width: 100%;
+    max-width: 400px;
+    background: $black;
+    padding: 50px;
+    height: 100vh;
+    z-index: 1;
+    @include transitionAll;
+    
+
+    &-head {
+        @include flexCenter;
+
+        .close {
+            cursor: pointer;
+        }
+    }
+
+    &-links {
+        @include flexColumn;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        a {
+            font-family: $primaryFont;
+            font-size: 30px;
+        }
+    }
+}
+
+.menu.show {
+    right: 0;
+}
+
+main {
+    padding: 80px 0;
+    .main {
+        display: flex;
+        position: relative;
+
+       
+
+        &-right {
+            width: 45%;
+            position: absolute;
+            bottom: 0;
+            left: 40%;
+            transform: translateX(40%);
+            background: $white;
+            padding: 40px;
+            font-family: $primaryFont;
+
+            h1 {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+            p {
+                font-weight: 700;
+                color: $darkGray;
+                line-height: 22px;
+            }
+        }
+    }
+}
+
+.our-creations {
+    margin-top: 50px;
+    padding-bottom: 55px;
+    position: relative;
+    .heading {
+        @include flexCenter;
+        font-family: $primaryFont;
+        margin-bottom: 40px;
+        h1 {
+            
+            font-size: 30px;
+        }
+
+        
+    }
+
+    button {
+        border: none;
+        outline: none;
+        padding: 15px 20px;
+        width: 150px;
+        cursor: pointer;
+        font-family: $primaryFont;
+        font-weight: bold;
+        border: 1px solid $black;
+        background: transparent;
+        @include transitionAll;
+
+        &:hover {
+            color: $white;
+            background: $black;
+        }
+    }
+
+    .mobile {
+        margin: 10px auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        display: none;
+    }
+
+    .creations {
+        @include flexCenter;
+        &-box {
+            margin-bottom: 20px;
+            cursor: pointer;
+            @include transitionAll;
+            position: relative;
+
+            &:hover {
+                transform: scaleY(1.05);
+                filter: grayscale(0.9);
+            }
+            h1 {
+                font-family: $primaryFont;
+                color: $white;
+                font-size: 25px;
+                position: absolute;
+                bottom: 40px;
+                left: 30px;
+            }
+        }
+    }
+}
+
+footer {
+    background: $black;
+
+    nav {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 40px;
+        
+
+        .pages-link a {
+            margin-right: 20px;
+            font-family: $primaryFont;
+            font-weight: 700;
+            @include transitionAll;
+            padding: 3 0 px;
+
+            &:hover {
+                border-bottom: 2px solid $white
+            }
+        }
+    }
+
+    .container {
+        @include flexCenter
+    }
+
+    .footer-right {
+        img {
+            width: 27px;
+            margin-left: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .copy {
+            p {
+                color: $white;
+                font-family: $primaryFont;
+            }
+        }
+    }
+}

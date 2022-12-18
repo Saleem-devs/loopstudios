@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$darkGray: hsl(0, 0%, 55%);
+$veryDarkGray: hsl(0, 0%, 41%);
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+$secondaryFont:'Alata', sans-serif;
+$primaryFont:'Josefin Sans', sans-serif;
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // gap: 30px;
+    flex-wrap: wrap;
+}
+@mixin bgImage {
+    @content 
+}
+
+@mixin transitionAll {
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin container {
+    width: 80%;
+    margin: auto;
+}
+
+@mixin media-tablet {
+    @media screen and (width <= 930px) {
+        @content;
+    }
+}
+
+@mixin media-mobile {
+    @media screen and (width <= 655px) {
+        @content;
+    }
+}
+
+
